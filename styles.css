@@ -1,0 +1,220 @@
+/* Universal Styles */
+* {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* HTML Element Styles */
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #eb727a;
+}
+
+h1 {
+    text-align: center;
+    color: yellow;
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input,
+select,
+option {
+    border: 2px solid blue;
+    width: 100%;
+    padding: 5px;
+    background-color: yellow;
+}
+
+button {
+    margin: 0 auto;
+    display: block;
+    padding: 5px;
+    font-weight: bold;
+    background-color: yellow;
+    border: 2px solid blue;
+    cursor: pointer;
+}
+
+/* Layout Styles */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.grid-header {
+    text-align: center;
+}
+
+.grid-header p {
+    margin-bottom: 20px;
+}
+
+.grid-title {
+    color: blue;
+    margin-bottom: 10px;
+}
+
+#pokemon-form {
+    padding: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Card Styles */
+
+#card-container {
+    display: none;
+    flex-direction: column;
+    background-color: #98FB98;
+    border: 10px solid #c0c0c0;
+    border-radius: 10px;
+    padding: 15px;
+    width: 300px;
+    height: 450px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#card-name {
+    font-size: 24px;
+    margin: 0;
+    line-height: 1;
+}
+
+#hp-container {
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+}
+
+#hp-header {
+    font-size: 14px;
+    margin: 0;
+}
+
+#card-hp {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1;
+}
+
+#type-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2px;
+    border: 1px solid #ddd;
+}
+
+#sprite-container {
+    width: 250px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    border: 5px solid #c0c0c0;
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+    background-color: #85E085;
+}
+
+#card-sprite {
+    width: 150px;
+}
+
+#card-measurements {
+    display: flex;
+    justify-content: center;
+    padding: 2px;
+    border: 5px solid #c0c0c0;
+    background-color: #c9c9c9;
+    border-radius: 10px;
+    width: 280px;
+    margin: 0 auto;
+}
+
+#card-moves {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.move {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.move-type {
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+}
+
+.move-name,
+.move-damage {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1;
+    margin: 0;
+}
+
+#card-entry {
+    margin-top: auto;
+    font-style: italic;
+    font-size: 14px;
+    text-align: center;
+}
+
+#download-card {
+    margin-top: 20px;
+    display: none;
+}
+
+@media (max-width: 600px) {
+
+    /* Stack columns on top of each other */
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 400px) {
+    h1 {
+        width: max-content;
+    }
+}

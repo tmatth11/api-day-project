@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="icon" href="images/icon.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Pokemon Card Generator</title>
+</head>
+
+<body>
+    <div id="h1-div">
+        <h1>Pokemon Card Generator</h1>
+    </div>
+    <div class="grid-container">
+        <div class="grid-column">
+            <div class="grid-header">
+                <h2 class="grid-title">Generate a Pokemon Card</h2>
+                <p>
+                    Fill out the form below to generate a Pokemon card of your choosing.
+                </p>
+            </div>
+            <form id="pokemon-form">
+                <div class="form-group">
+                    <label for="pokemon">Pokemon Name or ID:</label>
+                    <input type="text" id="pokemon" name="pokemon" required />
+                </div>
+                <div class="form-group">
+                    <label for="hp">Pokemon HP (from 30 to 380):</label>
+                    <input type="number" id="hp" name="hp" min="30" max="380" required />
+                </div>
+                <div class="form-group">
+                    <label for="move1">Move #1 (required):</label>
+                    <select name="move1" id="move1" required>
+                        <option value="">Select a move</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="move1-damage">Move #1 Damage (required, from 10 to 150):</label>
+                    <input type="number" id="move1-damage" name="move1-damage" min="10" max="150" required />
+                </div>
+                <div class="form-group">
+                    <label for="move2">Move #2 (optional):</label>
+                    <select name="move2" id="move2">
+                        <option value="">Select a move</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="move2-damage">Move #2 Damage (optional, from 10 to 150):</label>
+                    <input type="number" id="move2-damage" name="move2-damage" min="10" max="150" />
+                </div>
+                <button type="submit">Generate Card</button>
+            </form>
+        </div>
+        <div class="grid-column">
+            <div class="grid-header">
+                <h2 class="grid-title">Pokemon Card Generated</h2>
+                <p id="card-placeholder">Your generated Pokemon card will appear here.</p>
+            </div>
+            <div id="card-container">
+                <div id="card-header">
+                    <h2 id="card-name">Bulbasaur</h2>
+                    <div id="hp-container">
+                        <p id="hp-header">HP</p>
+                        <h2 id="card-hp">70</h2>
+                        <img id="type-icon" src="images/types/grass.svg" alt="pokemon type" />
+                    </div>
+                </div>
+                <div id="sprite-container">
+                    <img id="card-sprite"
+                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
+                        alt="Pokemon Sprite" />
+                </div>
+                <div id="card-measurements">
+                    <p>
+                        <span id="card-id">NO. <span id="card-id-value">1</span></span>
+                        <span id="card-height">HT: <span id="card-height-value">2'4"</span></span>
+                        <span id="card-weight">WT: <span id="card-weight-value">15.2 lbs</span></span>
+                    </p>
+                </div>
+                <div id="card-moves">
+                    <div class="move">
+                        <img class="move-type" src="images/types/normal.svg" alt="Move Type" />
+                        <h3 class="move-name">Tackle</h3>
+                        <h3 class="move-damage">10</h3>
+                    </div>
+                    <div class="move">
+                        <img class="move-type" src="images/types/grass.svg" alt="Move Type" />
+                        <h3 class="move-name">Vine Whip</h3>
+                        <h3 class="move-damage">30</h3>
+                    </div>
+                </div>
+                <div id="card-entry">
+                    <p id="entry-text">A strange seed was planted on its back at birth. The plant sprouts and grows with
+                        this Pokémon.</p>
+                </div>
+            </div>
+            <button id="download-card">Download Card</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
