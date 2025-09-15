@@ -8,6 +8,8 @@ const move2DamageLabel = document.querySelector('label[for="move2-damage"]');
 const downloadButton = document.getElementById("download-card");
 const cardContainer = document.getElementById("card-container");
 const cardPlaceholder = document.getElementById("card-placeholder");
+const cardSprite = document.getElementById("card-sprite");
+const cardCry = document.getElementById("card-cry");
 
 // PokeAPI base URL
 const baseUrl = "https://pokeapi.co/api/v2/";
@@ -130,6 +132,7 @@ pokemonInput.addEventListener("input", function (event) {
                         height: data.height,
                         weight: data.weight,
                         entry: entry,
+                        cry: data.cries.latest
                     };
 
                     console.log("Card Data:", cardData);
@@ -267,6 +270,12 @@ downloadButton.addEventListener("click", function () {
         downloadLink.download = `${cardData.name}_card.png`;
         downloadLink.click();
     });
+});
+
+// Play pokemon cry on click
+cardSprite.addEventListener("click", function () {
+    cardCry.src = cardData.cry;
+    cardCry.play();
 });
 
 // Helper functions

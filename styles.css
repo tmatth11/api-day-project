@@ -149,6 +149,7 @@ button {
 
 #card-sprite {
     width: 150px;
+    cursor: pointer;
 }
 
 #card-measurements {
